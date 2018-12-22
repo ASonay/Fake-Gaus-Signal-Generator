@@ -49,8 +49,13 @@ void WRFile::WriteBinFile(TF1 *fSig, unsigned amp, int valEx){
 
   const unsigned size = 1000;
   vector<int> sigBin;
-  
 
+  fSig->SetParameters(150,TMath::Pi()*((double)rand()/RAND_MAX),
+		      TMath::Pi()*((double)rand()/RAND_MAX),150,
+		      TMath::Pi()*((double)rand()/RAND_MAX),
+		      TMath::Pi()*((double)rand()/RAND_MAX),100,
+		      amp,500,100);
+  
   if(!obinFile){
     cout<<"Error in creating file!!!"<<endl;
     return;
