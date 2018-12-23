@@ -1,10 +1,10 @@
-#include "../WRFile/WRFile.hh"
+#include "../WRFile/WRFile.cpp"
 
 
-void drawSignal(int index =0)
+void drawSignal(const string filename, int index =0)
 {
 
-  WRFile BinFile("signal_data.bin");
+  WRFile BinFile(filename);
   BinFile.IBinFile();
   BinFile.ReadBinFile(index);
   BinFile.CloseIBinFile();
